@@ -3,16 +3,12 @@ import { endpoint } from "../../endpoint"
 
 type UpdatePasswordParams = {
   password: string
-  confirmPasswor: string
 }
 
-export const updatePassword = async ({
-  confirmPasswor,
-  password,
-}: UpdatePasswordParams) => {
+export const updatePassword = async ({ password }: UpdatePasswordParams) => {
   const { data } = await axios.post(endpoint.updatePassword, {
-    confirmPasswor,
     password,
+    email: localStorage.getItem("email"),
   })
 
   return data

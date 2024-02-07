@@ -9,7 +9,7 @@ export const routes = createBrowserRouter([
     element: <ForgotPass />,
   },
   {
-    path: "/nova-senha",
+    path: "/nova-senha/",
     element: <ChangePassword />,
   },
   {

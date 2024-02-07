@@ -19,6 +19,7 @@ export const useRecoverPassword = () => {
     setFormState({ loading: true, error: "" })
     try {
       const response = await informEmail(EmailRef.current?.value ?? "")
+      localStorage.setItem("email", EmailRef?.current?.value ?? "")
       console.log(response)
     } catch (error) {
       console.log(error)

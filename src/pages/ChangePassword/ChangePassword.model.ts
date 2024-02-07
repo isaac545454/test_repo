@@ -8,6 +8,7 @@ export const useChangePassword = () => {
     passwork: true,
     confirmPasswork: true,
   })
+
   const [loading, setLoading] = useState(false)
   const [errorState, setErrosState] = useState({
     passwork: "",
@@ -34,6 +35,16 @@ export const useChangePassword = () => {
       return
     }
 
+    if (
+      confirmPassworkRef?.current?.value !== confirmRef?.current?.value?.length
+    ) {
+      setErrosState({
+        passwork: "senhas diferentes",
+        confirmPasswork: "senhas diferentes",
+      })
+      return
+    }
+
     setErrosState({
       passwork: "",
       confirmPasswork: "",
@@ -43,7 +54,6 @@ export const useChangePassword = () => {
     try {
       const response = await updatePassword({
         password: confirmRef.current?.value ?? "",
-        confirmPasswor: confirmPassworkRef.current?.value ?? "",
       })
       console.log(response)
     } catch (error) {
