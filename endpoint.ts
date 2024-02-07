@@ -5,4 +5,5 @@ export const endpoint = {
   //reeviar codigo
   updatePassword: "/updatePassword",
   //fazer update na senha
+  informEmail: "/informEmail",
 }
