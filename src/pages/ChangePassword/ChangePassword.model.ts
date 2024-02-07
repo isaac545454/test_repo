@@ -35,9 +35,7 @@ export const useChangePassword = () => {
       return
     }
 
-    if (
-      confirmPassworkRef?.current?.value !== confirmRef?.current?.value?.length
-    ) {
+    if (confirmPassworkRef?.current?.value !== confirmRef?.current?.value) {
       setErrosState({
         passwork: "senhas diferentes",
         confirmPasswork: "senhas diferentes",
